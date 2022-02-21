@@ -8,6 +8,8 @@ effort in learning other markup languages.
 
 ## Basic rules 
 
+This is only a resumé. Consult the **complete hh_guide in docs/hh_guide/**
+
 - Opening tag: `<p>` is reduced to `<p`
 - The closing tag can be a nameless `>`     
 - Attributes in `<p class="red" id="example">` are reduced to `<p,class=red,id=example` 
@@ -89,9 +91,36 @@ Dublin Core scheme).
 With `<INCLUDE` a parser can be instructed to insert other files in main
 file. Included file may contain further `<INCLUDE`-instructions.
 
-### More?
+##Usage
 
-Read the **hh guide** in `docs/hh_guide/`
+Download zip-file (press red code-button, and select 'download zip')
 
-  
+For practical learning and experimenting the file `docs/hh_demo/hh_demo.hh` can serve as a good start.
 
+In a terminal window move to the directory `docs/hh_demo/`
+
+Try the script: `>python ../../hh.py --version`
+
+Then: `>python ../../hh.py -h`
+
+If this produces normal answers, you can try to convert demo.hh into demo.html yourself:
+
+`>python ../../hh.py demo.hh -K -H`
+
+Javascripts: The option -K activates Katex, the option -H activates Highlight.js (you should be online)
+
+The html-output `demo.html` is stored in the same directory
+
+If you add option -v to the command: the script will ask if you want to view the html in your favorite browser.
+
+The option -n activates the numbering of titles.
+
+Check the metadata in the html-output. Observe the effect of the default css on printing.
+
+Observe that your command-options are stored in a comment at the beginning of the html-file.
+
+`docs/hh_demo/demo.py` demonstrates how to call hh.py from another script. It allows us to reduce command to:
+
+`>python demo.py`
+
+Send comments, tips, wishes and questions to notsue at protonmail dot com . Do not compare with markdown, ReST, etc. HaHa is not another lightweight markup. It's 'dirty' HTML. As dirty as possible.
