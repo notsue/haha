@@ -91,7 +91,7 @@ Dublin Core scheme).
 With `<INCLUDE` a parser can be instructed to insert other files in main
 file. Included file may contain further `<INCLUDE`-instructions.
 
-##Usage
+## Usage
 
 Download zip-file (press red code-button, and select 'download zip')
 
