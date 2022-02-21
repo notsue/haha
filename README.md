@@ -93,7 +93,7 @@ file. Included file may contain further `<INCLUDE`-instructions.
 
 ## Usage
 
-Download zip-file (press red code-button, and select 'download zip')
+Download zip-file (press green code-button, and select 'download zip')
 
 For practical learning and experimenting the file `docs/hh_demo/hh_demo.hh` can serve as a good start.
 
