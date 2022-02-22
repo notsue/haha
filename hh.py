@@ -1,4 +1,5 @@
-# hh.py version 0.4 of HaHa-parser
+# hh.py version 0.4 bete of HaHa-reader
+# second upload 22/02/2022
 
 import os
 import argparse
@@ -81,7 +82,10 @@ class Element():
                 self.reference = True
             else:
                 if self.tag == "":
-                    self.tag = self.document.anonymous_tags[self.parent.tag]
+                    if self.parent.tag in self.document.anonymous_tags.keys():
+                        self.tag = self.document.anonymous_tags[self.parent.tag]
+                    else:
+                        self.tag = 'p'
                 self.half_close_tag = "%s>" % self.tag
             self.html = "<%s" % self.tag
             
@@ -109,7 +113,10 @@ class Element():
             
             # ------------- attributes -----------
             for att in ot[1:]:
+                att = att.replace('\=', 'TEMP-EQUAL')
                 name_value = att.split('=')
+                
+                
                 
                 if len(name_value) == 2:
                     
@@ -121,6 +128,7 @@ class Element():
                         val = name_value[1].replace('\_', 'TEMP-UNDERSCORE')
                         val = val.replace('_', ' ')
                         val = val.replace('TEMP-UNDERSCORE', '_')
+                        val = val.replace('TEMP-EQUAL', '=')
                         self.html += " %s='%s'" % (name_value[0], val )
                         if name_value[0] == 'href':
                             self.document.url_list.append(name_value[1])
@@ -129,15 +137,14 @@ class Element():
                         self.metadata = name_value[0]
                         
                     elif self.tag in self.document.anonymous_attributes.keys():
-                        
+                        val = name_value[0].replace('\_', 'TEMP-UNDERSCORE')
+                        val = val.replace('_', ' ')
+                        val = val.replace('TEMP-UNDERSCORE', '_')
+                        val = val.replace('TEMP-EQUAL', '=')
+                        self.html += " %s='%s'" % (self.document.anonymous_attributes[self.tag], val)
                         if self.tag == 'a':
-                            self.document.url_list.append(name_value[0])
-                            self.html += " %s='%s'" % (self.document.anonymous_attributes[self.tag], name_value[0])
-                        else:
-                            val = name_value[0].replace('\_', 'TEMP-UNDERSCORE')
-                            val = val.replace('_', ' ')
-                            val = val.replace('TEMP-UNDERSCORE', '_')
-                            self.html += " %s='%s'" % (self.document.anonymous_attributes[self.tag], val)
+                            self.document.url_list.append(val)
+                            
                     else:
                         val = name_value[0].replace('\_', 'TEMP-UNDERSCORE')
                         val = val.replace('_', ' ')
@@ -202,11 +209,17 @@ class Element():
                         self.html = self.html[0:-1] + "</a> <span class='whenprint'>(url %d)</span>" % len(self.document.url_list)
                     else:
                         if source_word in ['>', self.half_close_tag]: # normal case
-                            self.html = self.html[0:-1] + "</%s" % self.half_close_tag 
+                            if self.html[-1] == '>': # element is empty, although no member of empty_elements
+                                self.html = self.html + "</%s" % self.half_close_tag
+                            else:
+                                self.html = self.html[0:-1] + "</%s" % self.half_close_tag 
                         else:
                             source_word = source_word.replace('>', '> ')
                             swords = source_word.split()
-                            self.html = self.html[0:-1] + "</%s%s" % (self.half_close_tag, swords[1])
+                            if self.html[-1] == '>': # element is empty
+                                self.html = self.html + "</%s" % self.half_close_tag
+                            else:
+                                self.html = self.html[0:-1] + "</%s%s" % (self.half_close_tag, swords[1])
                             
                     if self.parent != None:
                         if self.footnote:
@@ -252,7 +265,7 @@ class Document():
                                    'selected', 'truespeed']
         self.empty_elements = ['TOC', 'NOTES', 'REFS', 'URLS', 'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']
         self.H_elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-        self.anonymous_tags = {'body':'p', 'ul': 'li', 'ol': 'li', 'tr': 'td'}
+        self.anonymous_tags = {'ul': 'li', 'ol': 'li', 'tr': 'td'}
         self.short_attributes = {'c': 'class', 'i': 'id', 'h': 'href', 'l': 'lang', 'a':'alt', 's':'src', 't':'title'}
         self.anonymous_attributes = {'a': 'href', 'img':'src'}
         self.referenced = []
@@ -560,5 +573,4 @@ def run():
 
 if __name__ == '__main__':
     run()
-    
-    
+   
