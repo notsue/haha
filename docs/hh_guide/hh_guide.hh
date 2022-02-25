@@ -167,7 +167,12 @@ pre>
 table>
 
 < We use capital characters for the user-defined tags, in order not to intervene with the regular tags (always smallcase).
-Do not use names starting with 'SET' or 'GET'. These are used for footnote e.a. >  
+Do not use names starting with 'SET' or 'GET'. These are used for footnote e.a. >
+
+< Question. If we have <code \<PY:=code,c=language-python \> >, the class of PY (code) is set. But can I add more attributes 
+while using PY. Yes. This works: <code \<PY,i=script-A >. It will create <code \<code class='language-python' id='script-A'\> >. Demo: > 
+
+< <PY,i=script-A This code tag has id-value 'script-A' >. > 
 
 <h3 Comments >
 
