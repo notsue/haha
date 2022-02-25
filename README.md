@@ -125,7 +125,7 @@ Observe that your command-options are stored in a comment at the beginning of th
 
 ## Tufte CSS
 
-You may be interested in our implementation of  [Tufte CSS](https://edwardtufte.github.io/tufte-css/). This is html with sidenotes and margin notes. See: `./docs/tufte`
+You may be interested in our implementation of  [Tufte CSS](https://github.com/edwardtufte/tufte-css). This is html with sidenotes and margin notes. See: `./docs/tufte`
 
 
 Send comments, tips, wishes and questions to notsue at protonmail dot com . Do not compare with markdown, ReST, etc. HaHa is not another lightweight markup. It's 'dirty' HTML. As dirty as possible.
