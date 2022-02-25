@@ -43,7 +43,7 @@ ul>
 
 <,test\_test_test If the value of an attribute contains multiple words, the whitespaces are replaced by underscore <b _ >.  
 For example: <b \<p,c=warning_not_important > creates <b \<p class="warning not important"\>. > If an underscore
-is part of the attribute-value, use escape <code \_ >. >
+is part of the attribute-value, use escape <code \_ >. An equal-sign needs te be escaped as well: <code \= >. >
 
 < Tag-names and attribute-names should be written in <b smallcase > characters. >
 < Boolean attributes are inserted as for example <b ...,async=,... > (equal sign, but no value). >
