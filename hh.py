@@ -296,7 +296,7 @@ class Document():
             exit()
         
         if self.config['outputfile'] == None:
-            for ext in ['.txt', '.hh']: 
+            for ext in ['.txt', '.hh', '.haha']: 
                 if self.config['sourcefile'].endswith(ext):
                     self.config['outputfile'] = self.config['sourcefile'].replace(ext, '.html')
                     
