@@ -40,7 +40,7 @@ section>
     
     < Use <code tufte.css > and the <code et-book > directory of font files. With the HaHa-reader this is
       done with the <code --css tufte > option. >
-    < HaHa has added some style for numbering of headers (if option <code -n > in on) and for the table
+    < HaHa created an extra <code tufte-haha.css > with some style for numbering of headers (if option <code -n > in on) and for the table
       of contents if <code \<TOC \> > is inserted. >
     < Tufte CSS uses <code h1 > for the document title, <code p > with class <code subtitle > for the document subtitle, <code h2 > for 
       section headings, and <code h3 > for low-level headings. More specific headings are not supported. >
@@ -244,8 +244,8 @@ section>
 	   </scene> 
 	</x3d> 
 !--------------------
-  Use left mouse-button to rotate and right mouse button to zoom in and out. >  x3d in the margin. We've removed the usual width- and height-attributes from x3d-element.
-  In tufte.css we gave the x3d-element has same style as img-element. >
+  Use left mouse-button to rotate and right mouse button to zoom in and out. >  x3d in the margin. 
+  We've removed the usual width- and height-attributes from x3d-element. >
   
   < If that is not your cup of tea, Tufte CSS also provides support for Edward Tufte and Adam Schwartz’s <a,http://imagequilts.com/ ImageQuilts >. >
         
