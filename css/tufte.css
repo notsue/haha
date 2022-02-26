@@ -385,7 +385,7 @@ input.margin-toggle {
     display: none;
 }
 
-label {border-top: solid 1px; border-left: solid 1px; } /* HaHa */
+
 label.sidenote-number {
     display: inline-block;
     max-height: 2rem; /* should be less than or equal to paragraph line-height */
