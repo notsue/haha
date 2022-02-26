@@ -8,7 +8,7 @@ effort in learning other markup languages.
 
 ## Basic rules 
 
-This is only a resumé. Consult the **complete hh_guide in docs/hh_guide/**
+This is only a resumé. Consult the complete (HaHa Guide)[https://notsue.github.io/hh_guide.html]
 
 - Opening tag: `<p>` is reduced to `<p`
 - The closing tag can be a nameless `>`     
@@ -91,6 +91,10 @@ Dublin Core scheme).
 With `<INCLUDE` a parser can be instructed to insert other files in main
 file. Included file may contain further `<INCLUDE`-instructions.
 
+### Tufte CSS
+
+You may also be interested in  [HaHa's Tufte CSS](https://notsue.github.io/tufte.html). This is html with sidenotes and margin notes. 
+
 ## Usage
 
 Download zip-file (press green code-button, and select 'download zip')
@@ -123,9 +127,6 @@ Observe that your command-options are stored in a comment at the beginning of th
 
 `>python demo.py`
 
-## Tufte CSS
-
-You may be interested in our implementation of  [Tufte CSS](https://github.com/edwardtufte/tufte-css). This is html with sidenotes and margin notes. See: `./docs/tufte`
 
 
 Send comments, tips, wishes and questions to notsue at protonmail dot com . Do not compare with markdown, ReST, etc. HaHa is not another lightweight markup. It's 'dirty' HTML. As dirty as possible.
