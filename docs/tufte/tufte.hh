@@ -22,7 +22,7 @@
     The original idea was cribbed from <a,https://tufte-latex.github.io/tufte-latex/ <span Tufte- ><span,latex <span L ><span,latex-sup a ><span T><span,latex-sub e ><span X > > > 
     and <a,http://rmarkdown.rstudio.com/tufte\_handout\_format.html R Markdown’s Tufte Handout format >. >
     
-    < The <a,https://hithub.com/notsue/HaHa HaHa project > used <em Tufte CSS > and it's corresponding HTML as a test. 
+    < The <a,https://github.com/notsue/HaHa HaHa project > used <em Tufte CSS > and it's corresponding HTML as a test. 
     With this more demanding HTML-structure, it was shown that HaHa-reader version 0.4 could use some improvements. >
 
 section>
