@@ -349,6 +349,7 @@ class Document():
         elif self.config['css'] == 'tufte':
             html += '<link rel="stylesheet" href="%s%s" >\n' % (self.directories['css'], 'tufte.css')
             html += '<link rel="stylesheet" href="%s%s" >\n' % (self.directories['css'], 'latex.css')
+            html += '<link rel="stylesheet" href="%s%s" >\n' % (self.directories['css'], 'tufte-haha.css')
         #OPTION: add more css-options (adapt list in argparse (function run() below)
         
         html += '<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/">\n'
