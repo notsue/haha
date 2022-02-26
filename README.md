@@ -8,7 +8,7 @@ effort in learning other markup languages.
 
 ## Basic rules 
 
-This is only a resumé. Consult the complete (HaHa Guide)[https://notsue.github.io/hh_guide.html]
+This is only a resumé. Consult the complete [HaHa Guide](https://notsue.github.io/hh_guide.html)
 
 - Opening tag: `<p>` is reduced to `<p`
 - The closing tag can be a nameless `>`     
