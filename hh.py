@@ -347,8 +347,8 @@ class Document():
         if self.config['css'] == 'default':
             html += '<link rel="stylesheet" href="%s%s" >\n' % (self.directories['css'], 'hh_basic.css')
         elif self.config['css'] == 'tufte':
-            html += '<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.css"'
-            html += '<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/latex.css"')
+            html += '<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/tufte.css" >\n'
+            html += '<link rel="stylesheet" href="https://edwardtufte.github.io/tufte-css/latex.css" >\n'
             html += '<link rel="stylesheet" href="%s%s" >\n' % (self.directories['css'], 'tufte-haha.css')
         #OPTION: add more css-options (adapt list in argparse (function run() below)
         
