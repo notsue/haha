@@ -529,11 +529,12 @@ class Document():
             TOC = "<div class='table_of_contents'>\n"
             for h in self.toc_list:
                 tag = h[1:3]
+                num = h[2]
                 if h.startswith('<h1') and self.config['h1'] == False:
                     pass
                 else:
                     if int(tag[1]) <= self.config['toc']:
-                        hlink = h.replace("<%s title='" % tag, "<div><a href='#" )
+                        hlink = h.replace("<%s title='" % tag, "<div class='H_level_%s'><a href='#" % num )
                         hlink = hlink.replace("</%s>" % tag, "</a></div>\n")
                         hlink = hlink.replace("id=", "alt=")
                         TOC += hlink
