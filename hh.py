@@ -111,10 +111,10 @@ class Element():
                 H_id_num_string = H_num_string.replace('.', '_')
                     
                 if self.document.config['h1'] == True:
-                    self.html += "<%s title='section_%s' class='H_level_%s' " % (self.tag, H_id_num_string, self.tag[1] )
+                    self.html += "<%s title='section_%s' " % (self.tag, H_id_num_string)
                 else:
                     if self.tag != 'h1':
-                        self.html += "<%s title='section_%s' class='H_level_%s' " % (self.tag, H_id_num_string, self.tag[1])
+                        self.html += "<%s title='section_%s' " % (self.tag, H_id_num_string)
                     else:
                         self.html = "<%s " % (self.tag)
             # ------------- attributes -----------
