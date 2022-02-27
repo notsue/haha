@@ -125,7 +125,7 @@ class Element():
                 if len(name_value) == 2:
                     
                     if name_value[0] in self.document.boolean_attributes:
-                        self.html += " %s " % (name_value[0])
+                        self.html += " %s='' " % (name_value[0])
                     else:
                         if name_value[0] in self.document.short_attributes.keys():
                             name_value[0] = self.document.short_attributes[name_value[0]]
