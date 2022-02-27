@@ -339,10 +339,10 @@ class Document():
     div.table_of_contents {margin-left: 25px; border-left: solid 1px black; padding: 5px;}
     div.table_of_contents  > div > a {text-decoration: none; color: black; font-size: 1.3rem;}
     div.table_of_contents  > div > a:hover {background-color: silver; color: white; }
-    div.table_of_contents  > div  a.H_level_2 {margin-left: 12px;}
-    div.table_of_contents  > div  a.H_level_3 {margin-left: 24px;}
-    div.table_of_contents  > div  a.H_level_4 {margin-left: 36px;}
-    div.table_of_contents  > div  a.H_level_5 {margin-left: 48px;}
+    div.table_of_contents  > div.H_level_2 {margin-left: 12px;}
+    div.table_of_contents  > div.H_level_3 {margin-left: 24px;}
+    div.table_of_contents  > div.H_level_4 {margin-left: 36px;}
+    div.table_of_contents  > div.H_level_5 {margin-left: 48px;}
     </style>
     '''
         if self.config['css'] == 'default':
