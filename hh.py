@@ -153,6 +153,7 @@ class Element():
                         val = name_value[0].replace('\_', 'TEMP-UNDERSCORE')
                         val = val.replace('_', ' ')
                         val = val.replace('TEMP-UNDERSCORE', '_')
+                        val = val.replace('TEMP-EQUAL', '=')
                         self.html += " class='%s'" % val
             self.html += ">"
             if H_id_num_string != '':
@@ -210,8 +211,8 @@ class Element():
                         print('error at line %d in %s (probably: MISSING OPENING TAG)'% (self.document.line_number, self.document.file))
                     if self.definition == True or self.include == True:
                         pass
-                    elif self.tag in self.document.empty_elements:
-                        pass
+                    #elif self.tag in self.document.empty_elements:
+                    #    pass
                     elif self.tag == 'a':
                         self.html = self.html[0:-1] + "</a> <span class='whenprint'>(url %d)</span>" % len(self.document.url_list)
                     else:
@@ -498,10 +499,10 @@ class Document():
             footnoteblock += '\n<p class="footnote"><span class="footnote_number">[%d]</span> %s</p>' % (self.footnote_counter, self.footnote_dict[f])
             self.footnote_counter += 1  
         footnoteblock += '\n</div>\n'
-        f = re.findall('<NOTES>', body.html)
+        f = re.findall('<NOTES></NOTES>', body.html)
         if len(f) > 1:
-            body.html = body.html.replace('<NOTES>', "", len(f) - 1)
-        body.html = body.html.replace('<NOTES>', footnoteblock)
+            body.html = body.html.replace('<NOTES></NOTES>', "", len(f) - 1)
+        body.html = body.html.replace('<NOTES></NOTES>', footnoteblock)
         
         # --------- references ---------------
         refblock = '<div class="references">'
@@ -509,10 +510,10 @@ class Document():
         for r in sorted(self.referenced):
             refblock += '\n<p class="reference"><span class="reference_label">[%s]</span> %s</p>' % (r.replace('_', ' '), self.reference_dict[r])
         refblock += '\n</div>\n'
-        f = re.findall('<REFS>', body.html)
+        f = re.findall('<REFS></REFS>', body.html)
         if len(f) > 1:
-            body.html = body.html.replace('<REFS>', "", len(f) - 1)
-        body.html = body.html.replace('<REFS>', refblock )
+            body.html = body.html.replace('<REFS></REFS>', "", len(f) - 1)
+        body.html = body.html.replace('<REFS></REFS>', refblock )
         
         # ---------- URLs -------------------
         url_counter = 1
@@ -541,9 +542,10 @@ class Document():
             TOC += "</div>\n"
         else:
             TOC = ""
-        body.html = body.html.replace('<TOC>', TOC, 1) # only first occurance of <TOC>
-        body.html = body.html.replace('<TOC>', '')      # remove others
-        
+        body.html = body.html.replace('<TOC></TOC>', TOC, 1) # only first occurance of <TOC>
+        body.html = body.html.replace('<TOC></TOC>', '')      # remove others
+        for e in self.empty_elements:
+            body.html = body.html.replace('></%s>' % e,' />' )
         self.body = body.html
         
     def write_output(self):               
