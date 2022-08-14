@@ -75,8 +75,12 @@ You may also be interested in  [haha and Tufte CSS](https://notsue.github.io/hah
 
 ## Usage
 
-Download zip-file of our demo site (https://github.com/notsue/notsue.github.io) (press green code-button, and select 'download zip')
+Two options:
 
-Read haha.html and haha-tufte.html.
+- Download zip-file here (press green code-button, and select 'download zip')
+
+- Probably better: Download zip-file of our demo site (https://github.com/notsue/notsue.github.io) 
+
+Second option gives you a guide and examples: haha.html and haha-tufte.html.
 
 Send comments, tips, wishes and questions to notsue at protonmail dot com . Do not compare with markdown, ReST, etc. HaHa is not another lightweight markup. It's 'dirty' HTML. As dirty as possible.
