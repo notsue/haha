@@ -75,7 +75,7 @@ You may also be interested in  [haha and Tufte CSS](https://notsue.github.io/hah
 
 ## Usage
 
-Download zip-file at our [Demo site] (https://github.com/notsue/notsue.github.io) (press green code-button, and select 'download zip')
+Download zip-file of our demo site (https://github.com/notsue/notsue.github.io) (press green code-button, and select 'download zip')
 
 Read haha.html and haha-tufte.html.
 
