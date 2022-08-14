@@ -48,9 +48,9 @@ In some cases the opening tag needs no name:
 
 The anonymous opening tag `[` is interpreted as: 
 
-- a `<li` if the element is a child of `<ul` or `<ol` 
-- a `<td` if the element is a child of `<tr` 
-- a `<p` in all other contexts 
+- a `[li` if the element is a child of `<ul` or `<ol` 
+- a `[td` if the element is a child of `<tr` 
+- a `[p` in all other contexts 
 
 There are also some anonymous attributes: 
 
