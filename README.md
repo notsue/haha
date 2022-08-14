@@ -8,7 +8,7 @@ document is 95 % haha . Contrary to many other lightweight markup, there is no s
 
 ## Basic rules 
 
-This is only a resumé. Consult the complete [HaHa Guide](https://notsue.github.io/haha.html)
+This is only a resumé. Consult the complete [haha Guide](https://notsue.github.io/haha.html)
 
 - Opening tag: `<p>` is reduced to `[p`
 - The closing tag can be a nameless `]`     
